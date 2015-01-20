@@ -39,7 +39,7 @@ public class ContactHandler {
         
     }
     
-
+    // metod which processes Contact List to get duplicated contacts
     public List<Contact> getDuplicatedContacts(List<Contact> contactList){
         
         this.contactsList = contactList;
@@ -72,6 +72,8 @@ public class ContactHandler {
         this.duplicatedContactsList = result;
         return this.duplicatedContactsList;
     }
+    
+    //method which filters contacts and returns duplicates
     public List<Contact> filterContactsList(List<Contact> contactList){
         
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
@@ -159,10 +161,11 @@ public class ContactHandler {
             
         }
 
-        System.out.println("rozmiar" + result.size());
         return result;
 }
 
+    
+    //method which decides which phoneNumbers apperas in databse more than once
     public List<String> getDuplicatedPhoneNumbers(){
         
         List<Contact> contacts = this.contactsList;
